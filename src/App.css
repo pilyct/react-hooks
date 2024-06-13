@@ -1,31 +1,210 @@
 .App {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+h1 {
+  position: relative;
+  margin-top: 10;
+  margin-bottom: 0;
+  font-weight: 800;
+  font-size: 50px ;
+  color: #fff;
+  top: 15px;
+}
+
+h3 {
+  position: relative;
+  bottom: 12px;
+  color: #fff;
+  top: 5px;
+}
+
+.hooks {
+  padding-left: 50px;
+  margin: 0 100px 0;
+
+}
+
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #16a0b5;
+}
+
+span {
+  font-weight: bold;
+}
+
+.note {
+  padding: 0;
+  margin: 5px 0;
+  font-size: 10px;
+}
+
+/* .hook is found in each component */
+.hook {
+  border: 2px solid #ccc;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  padding: 10px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  max-width: 80%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.search {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+
+.titles {
+  position: relative;
+  padding:0 0 50px 0;
   text-align: center;
+  background-color: #070a11;
+  width: 100%;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+  position: absolute;
+  top: 25px;
+  width: 6400px;
+  height: 180px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.wave:nth-of-type(2) {
+  /* top: -20px; */
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
 }
 
-.App-link {
-  color: #61dafb;
+
+/* .waterContainer {
+  width: 100%;
+  height: 200px;
+  background-color: #819dea;
+  box-shadow: inset 0 0 50px #1544c6;
+  position: relative;
+  overflow: hidden;
+}
+
+.waterContainer::before {
+  position: absolute;
+  content: '';
+  width: 800%;
+  height: 200%;
+  background-color: #ececec;
+  top: -150%;
+  left: -50%;
+  border-radius: 40%;
+  animation: wave 12s infinite linear;
+}
+
+.waterContainer::after {
+  position: absolute;
+  content: '';
+  width: 204%;
+  height: 204%;
+  background-color: #070a11;
+  top: -150%;
+  left: -50%;
+  border-radius:25%;
+  animation: wave 15s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes wave {
+  0% {transform: translate(-50%, 0) rotateZ(0deg);}
+  50% {transform: translate(-50%, -2%) rotateZ(180deg);}
+  100% {transform: translate(-50%, 0%) rotateZ(360deg);}
+} */
+
+
+
+
+
+.water-effect {
+  position: absolute;
+  width: 100%;
+  height: 180px; /* Adjust height as needed */
+  background: #6488ea;
+  animation: water-flow 4s ease-in-out infinite;
+  bottom: 0;
+  z-index: 0;
+}
+
+@keyframes water-flow {
+  0%, 100% {
+    clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+}
+
+/* @keyframes water-flow {
+  0%, 100% {
+    clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+  25% {
+    clip-path: polygon(0% 55%, 20% 60%, 35% 65%, 55% 70%, 70% 75%, 85% 70%, 100% 65%, 100% 45%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 60%, 25% 65%, 40% 70%, 60% 75%, 75% 70%, 90% 65%, 100% 70%, 100% 25%, 100% 100%, 0% 100%);
+  }
+  75% {
+    clip-path: polygon(0% 55%, 10% 58%, 25% 55%, 45% 60%, 60% 65%, 75% 60%, 90% 55%, 100% 58%, 100% 100%, 0% 100%);
+  }
+  80% {
+    clip-path: polygon(0% 60%, 15% 65%, 30% 60%, 50% 65%, 65% 70%, 80% 65%, 95% 60%, 100% 65%, 100% 100%, 0% 100%);
+  }
+} */
+
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +214,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

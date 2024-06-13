@@ -1,0 +1,20 @@
+.memo-title {
+  padding: 10px 10px 0;
+  text-align: center;
+}
+
+/* .memo-title  span {
+  font-weight: bold;
+} */
+
+
+.memo-input {
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.input-title {
+  align-self: self-start;
+  margin: 10px 10px 5px;
+  font-size: 12px;
+}

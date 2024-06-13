@@ -1,0 +1,17 @@
+.resize-title {
+  padding: 10px 10px 0;
+}
+
+/* .resize-title span {
+  font-weight: bold;
+} */
+
+
+.value {
+  width: 100%;
+  font-weight: bold;
+  font-size: 28px;
+  background-color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}

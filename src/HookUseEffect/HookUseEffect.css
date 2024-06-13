@@ -1,0 +1,40 @@
+.fetch-title {
+  padding: 10px;
+}
+
+/* .fetch-title span {
+  font-weight: bold;
+} */
+
+.fetch {
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: start; /* Center child elements horizontally */
+  width: 100%; /* Make the fetch div take full width of the hook div */
+  max-width: 100%; /* Prevent it from getting too wide */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.fetch h3 {
+  /* border: 2px solid blue; */
+  top: 2px;
+  color: #000;
+}
+
+
+.query {
+  /* border: 2px solid blue; */
+  font-size: small;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Make the query div take full width of the fetch div */
+  max-width: 100%; /* Limit the width for better readability */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+  max-height: 400px; /* Set a max height to ensure it does not overflow the parent */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+

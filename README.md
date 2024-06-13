@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# React Hooks 
+The aim of this project is to practise using React Hooks in different kinds of situations.
+<!-- ![Alt Text](./public/react-hooks.gif) -->
+<img src="./public/react-hooks.gif" width="850" height="500" />
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
