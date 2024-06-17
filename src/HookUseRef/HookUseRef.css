@@ -1,0 +1,40 @@
+
+.ref-title {
+  padding: 10px 10px 0 10px;
+  text-align: center;
+}
+
+
+.ref-container {
+  position: relative;
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure the container has a defined width */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+
+.output {
+  position: relative;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 24px;
+  width: 100%; /* Ensure the output takes the full width of the container */
+  word-wrap: break-word; /* Break long words */
+  white-space: normal; /* Allow text to wrap normally */
+}
+
+.output span {
+  position: inherit;
+  background: linear-gradient(to right, #26baba, #e31777);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+}

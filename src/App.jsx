@@ -6,6 +6,7 @@ import HookUseEffect from './HookUseEffect/HookUseEffect';
 import HookUseEffectTwo from './HookUseEffect/HookUseEffectTwo';
 import HookUseMemo from './HookUseMemo/HookUseMemo';
 import HookUseContext from './HookUseContext/HookUseContext';
+import HookUseRef from './HookUseRef/HookUseRef';
 
 export default function App() {
   const [filteredHooks, setFilteredHooks] = useState([]);
@@ -40,6 +41,13 @@ export default function App() {
       hooks.push(
         { id: 'context-title', element: <div id='context' className='title'>useContext()</div> },
         { id: 'useContext', element: <HookUseContext /> }
+      );
+    }
+
+    if (query === 'ref' || query === 'useRef' || query === 'useref') {
+      hooks.push(
+        { id: 'ref-title', element: <div id='ref' className='title'>useRef()</div> },
+        { id: 'useRef', element: <HookUseRef /> }
       );
     }
 
@@ -89,6 +97,9 @@ export default function App() {
 
             <div key="context-title-default" id='context' className='title'>useContext()</div>
             <HookUseContext key="useContext-default" />
+
+            <div key="ref-title-default" id='ref' className='title'>useRef()</div>
+            <HookUseRef key="useRef-default" />
           </>
         )}
       </div>
