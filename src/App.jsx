@@ -1,58 +1,19 @@
 import { useState } from 'react';
 import './App.css';
-import Search from './Search/Search';
 import HookUseState from './HookUseState/HookUseState';
 import HookUseEffect from './HookUseEffect/HookUseEffect';
 import HookUseEffectTwo from './HookUseEffect/HookUseEffectTwo';
 import HookUseMemo from './HookUseMemo/HookUseMemo';
 import HookUseContext from './HookUseContext/HookUseContext';
 import HookUseRef from './HookUseRef/HookUseRef';
+import HookUseReducer from './HookUseReducer/HookUseReducer';
+import Search from './Search/Search';
+import { getFilteredHooks } from './Search/searchUtils';
 
 export default function App() {
   const [filteredHooks, setFilteredHooks] = useState([]);
   const [query, setQuery] = useState('');
 
-  const getFilteredHooks = (query) => {
-    const hooks = [];
-
-    if (query === 'state' || query === 'useState' || query === 'usestate') {
-      hooks.push(
-        { id: 'state-title', element: <div id='state' className='title'>useState()</div> },
-        { id: 'useState', element: <HookUseState /> }
-      );
-    }
-
-    if (query === 'effect' || query === 'useEffect' || query === 'useeffect') {
-      hooks.push(
-        { id: 'effect-title', element: <div id='effect' className='title'>useEffect()</div> },
-        { id: 'useEffect', element: <HookUseEffect /> },
-        { id: 'useEffectTwo', element: <HookUseEffectTwo /> }
-      );
-    }
-
-    if (query === 'memo' || query === 'useMemo' || query === 'usememo') {
-      hooks.push(
-        { id: 'memo-title', element: <div id='memo' className='title'>useMemo()</div> },
-        { id: 'useMemo', element: <HookUseMemo /> }
-      );
-    }
-
-    if (query === 'context' || query === 'useContext' || query === 'usecontext') {
-      hooks.push(
-        { id: 'context-title', element: <div id='context' className='title'>useContext()</div> },
-        { id: 'useContext', element: <HookUseContext /> }
-      );
-    }
-
-    if (query === 'ref' || query === 'useRef' || query === 'useref') {
-      hooks.push(
-        { id: 'ref-title', element: <div id='ref' className='title'>useRef()</div> },
-        { id: 'useRef', element: <HookUseRef /> }
-      );
-    }
-
-    return hooks;
-  };
 
   const handleSearch = (query) => {
     const filtered = getFilteredHooks(query);
@@ -63,6 +24,11 @@ export default function App() {
   const handleClear = () => {
     setFilteredHooks([]); // Clear filtered hooks
     setQuery(''); // Clear query state
+  };
+
+
+  const navigateTo = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -83,23 +49,26 @@ export default function App() {
           filteredHooks.map(({ id, element }) => <div key={id}>{element}</div>)
         ) : (
           <>
-            <div key="state-title-default" id='state' className='title'>useState()</div>
+            <div key="state-title-default" id='state' className='title' onClick={() => navigateTo('https://youtu.be/O6P86uwfdR0?si=uYwqnKxmnAByV5yP')}>useState()</div>
             <HookUseState key="useState-default" />
 
-            <div key="effect-title-default" id='effect' className='title'>useEffect()</div>
+            <div key="effect-title-default" id='effect' className='title' onClick={() => navigateTo('https://youtu.be/0ZJgIjIuY7U?si=NJbZZDQLimZTF3Sy')}>useEffect()</div>
             <div className='container'>
               <HookUseEffect key="useEffect-default" />
               <HookUseEffectTwo key="useEffectTwo-default" />
             </div>
 
-            <div key="memo-title-default" id='memo' className='title'>useMemo()</div>
+            <div key="memo-title-default" id='memo' className='title' onClick={() => navigateTo('https://youtu.be/THL1OPn72vo?si=0J0V5omgqNlowrrj')}>useMemo()</div>
             <HookUseMemo key="useMemo-default" />
 
-            <div key="context-title-default" id='context' className='title'>useContext()</div>
+            <div key="context-title-default" id='context' className='title' onClick={() => navigateTo('https://youtu.be/5LrDIWkK_Bc?si=0IGaHeawpppa-SE8')}>useContext()</div>
             <HookUseContext key="useContext-default" />
 
-            <div key="ref-title-default" id='ref' className='title'>useRef()</div>
+            <div key="ref-title-default" id='ref' className='title' onClick={() => navigateTo('https://youtu.be/t2ypzz6gJm0?si=v_dDYCda0t5pcE8u')}>useRef()</div>
             <HookUseRef key="useRef-default" />
+
+            <div key="reducer-title-default" id='ref' className='title' onClick={() => navigateTo('https://youtu.be/kK_Wqx3RnHk?si=3k2P-UHQgMWDLTWA')}>useReducer()</div>
+            <HookUseReducer key="useReducer-default" />
           </>
         )}
       </div>
